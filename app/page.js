@@ -40,7 +40,7 @@ export default function Home() {
     <div style={{ padding: "20px" }}>
       <h1>Upload de Imagens</h1>
       <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-      <button onClick={handleUpload}>Enviar</button>
+      <button className="bg-blue-500 px-5 py-2" onClick={handleUpload}>Enviar</button>
 
       {url && (
         <div>
