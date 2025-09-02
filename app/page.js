@@ -15,7 +15,7 @@ export default function Home() {
     reader.onloadend = async () => {
       const base64 = reader.result.split(",")[1];
 
-      const res = await fetch("/api/upload", {
+      const res = await fetch("/api/upload/route.js", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ file: base64 }),
