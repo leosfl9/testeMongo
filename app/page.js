@@ -11,11 +11,11 @@ export default function Home() {
     if (!file) return;
 
     const reader = new FileReader();
-    if (!reader.result) return;
+
     reader.onloadend = async () => {
       const base64 = reader.result.split(",")[1];
 
-      const res = await fetch("/api/upload/route.js", {
+      const res = await fetch("/api/upload", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ file: base64 }),
@@ -40,7 +40,7 @@ export default function Home() {
     <div style={{ padding: "20px" }}>
       <h1>Upload de Imagens</h1>
       <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-      <button className="bg-blue-500 px-5 py-2" onClick={handleUpload}>Enviar</button>
+      <button className="bg-blue-500 px-5 py-2 hover:bg-blue-300 hover:cursor-pointer" onClick={handleUpload}>Enviar</button>
 
       {url && (
         <div>
