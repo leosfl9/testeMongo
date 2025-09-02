@@ -11,6 +11,7 @@ export default function Home() {
     if (!file) return;
 
     const reader = new FileReader();
+    if (!reader.result) return;
     reader.onloadend = async () => {
       const base64 = reader.result.split(",")[1];
 
