@@ -12,6 +12,7 @@ export async function GET() {
 
     const images = await db.collection("images").find({}).toArray();
 
+    // commit
     return new Response(JSON.stringify(images), { status: 200 });
   } catch (err) {
     console.error(err);
